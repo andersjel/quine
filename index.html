@@ -129,8 +129,10 @@ repeat 2 1</textarea>
                     if(result){
                         var start = output.length - parseInt(result[1]);
                         var span = parseInt(result[2]);
-                        if(start >= 0 && start + span <= output.length){
-                            output = output.concat(output.slice(start, start + span));
+                        if(start >= 0){
+                            for(var i = 0; i < span; i++){
+                                output.push(output[start+i]);
+                            }
                         }
                     }
                 }
